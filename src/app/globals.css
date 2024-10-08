@@ -2,26 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom font-face definition */
+@font-face {
+  font-family: "myLocalFont";
+  src: local("SonderRegular"),
+    url("/fonts/SonderRegular.otf") format("opentype");
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --fontFamilyLocal: "myLocalFont";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.social-links {
+  display: none;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.sonder-font {
+  font-family: var(--fontFamilyLocal), sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.navbar {
+  background-color: #ece7e1;
+}
+
+body:has(.projects) .navbar,
+body:has(.contact) .navbar {
+  background-color: #1a1818;
+  color: #ece7e1;
+}
+
+body:has(.home) .home-link {
+  display: none;
+}
+
+body:has(.home) .social-links {
+  display: block;
 }
