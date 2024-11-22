@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export const Track = () => {
+  const pathname = usePathname();
+
   useEffect(() => {
-    const trackVisit = async (url: string) => {
+    const trackVisit = async (url: any) => {
       await fetch("/api/track-visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -16,10 +19,10 @@ export const Track = () => {
     };
 
     const handleRouteChange = () => {
-      trackVisit(window.location.href);
+      trackVisit(pathname && pathname);
     };
 
-    trackVisit(window.location.href);
+    trackVisit(pathname && pathname);
 
     window.addEventListener("popstate", handleRouteChange);
 
