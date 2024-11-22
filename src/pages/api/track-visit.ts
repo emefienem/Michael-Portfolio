@@ -11,14 +11,14 @@ export default async function handler(
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.MY_EMAIL,
-        pass: process.env.MY_PASS,
+        user: "michael.emefienem@gmail.com",
+        pass: "qbzw ahhn bhgd etzc",
       },
     });
 
     try {
       transporter.sendMail({
-        from: `"Portfolio Notification" <${process.env.MY_EMAIL}>`,
+        from: `"Portfolio Notification" <michael.emefienem@gmail.com>`,
         to: "emefienemmichael@gmail.com",
         subject: "New Website Visitor",
         text: `A user just visited your portfolio: ${url} at ${timestamp}`,
