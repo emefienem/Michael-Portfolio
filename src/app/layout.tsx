@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={`${montserrat.className} flex flex-col lg:flex-row`}>
         <Navbar />
         {children}
-        <Analytics />
+        {/* <Analytics /> */}
         <Track />
       </body>
     </html>
