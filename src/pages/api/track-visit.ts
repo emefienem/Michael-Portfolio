@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import postmark from "postmark";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
@@ -11,38 +11,23 @@ export default async function handler(
   if (req.method === "POST") {
     const { url, timestamp } = req.body;
 
-    const transporter = nodemailer.createTransport({
-      service: "Mailgun",
-      auth: {
-        user: "emefienem",
-        pass: "bc7a8985-dcdc-4835-b0a5-775d8ecc4d08",
-      },
-      logger: true,
-      debug: true,
-    });
+    const client = new postmark.ServerClient(
+      "bc7a8985-dcdc-4835-b0a5-775d8ecc4d08"
+    );
 
     try {
-      transporter.sendMail(
-        {
-          from: `"Portfolio Notification" <michael.emefienem@gmail.com>`,
-          to: "emefienemmichael@gmail.com",
-          subject: "New Website Visitor",
-          text: `A user just visited your portfolio: ${url} at ${timestamp}`,
-        },
-        (error, info) => {
-          if (error) {
-            console.error("Error sending email", error);
-            res.status(500).json({ message: "Failed to send notification" });
-          } else {
-            console.log("Email sent: " + info.response);
-            res.status(200).json({ message: "Notification sent!" });
-          }
-        }
-      );
+      const sendResult = await client.sendEmail({
+        From: "michael.emefienem210591138@st.lasu.edu.ng",
+        To: "emefienemmichael@gmail.com",
+        Subject: "New Website Visitor",
+        TextBody: `A user just visited your portfolio: ${url} at ${timestamp}`,
+      });
+
+      console.log("Email sent: ", sendResult);
 
       res.status(200).json({ message: "Notification sent!" });
     } catch (error) {
-      console.error("Error sending email", error);
+      console.error("Error sending email:", error);
       return res.status(500).json({ message: "Failed to send notification" });
     }
   } else {
