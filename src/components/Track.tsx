@@ -13,15 +13,6 @@ export const Track = () => {
           timestamp: new Date().toISOString(),
         }),
       });
-
-      if (response.ok) {
-        // Log success to the console
-        console.log("Notification sent successfully!");
-      } else {
-        // Log failure to the console
-        const errorData = await response.json();
-        console.error("Failed to send notification:", errorData.message);
-      }
     };
 
     const handleRouteChange = () => {

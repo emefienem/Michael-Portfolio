@@ -21,8 +21,6 @@ export default async function handler(
         TextBody: `A user just visited your portfolio: ${url} at ${timestamp}`,
       });
 
-      console.log("Email sent: ", sendResult);
-
       res.status(200).json({ message: "Notification sent!" });
     } catch (error: unknown) {
       if (error instanceof Error) {
