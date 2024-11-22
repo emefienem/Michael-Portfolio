@@ -3,7 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/Navbar";
-import { Track } from "../pages/Track";
+import { Track } from "../components/Track";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 

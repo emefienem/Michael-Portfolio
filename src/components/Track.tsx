@@ -30,5 +30,5 @@ export const Track = () => {
     };
   }, []);
 
-  return null; // This component doesn't render anything visible
+  return null;
 };
