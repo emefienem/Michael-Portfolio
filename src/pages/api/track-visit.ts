@@ -12,10 +12,10 @@ export default async function handler(
     const { url, timestamp } = req.body;
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      service: "Mailgun",
       auth: {
-        user: "michael.emefienem@gmail.com",
-        pass: "ymnq ctiq udnc kkcq",
+        user: "emefienem",
+        pass: "bc7a8985-dcdc-4835-b0a5-775d8ecc4d08",
       },
       logger: true,
       debug: true,
