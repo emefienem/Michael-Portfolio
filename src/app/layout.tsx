@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/Navbar";
+import { Track } from "../pages/Track";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Analytics />
+        <Track />
       </body>
     </html>
   );

@@ -6,7 +6,6 @@ import Loading from "@/components/Loading";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (containerRef.current) {
       gsap.from(containerRef.current.querySelectorAll(".link, .opacity"), {
@@ -26,7 +25,6 @@ export default function Home() {
       className="home bg-primary min-h-[calc(100dvh-50px)] lg:h-screen w-screen"
     >
       <Loading />
-
       <div className=" justify-center flex flex-col lg:flex-row lg:items-end mt-24">
         <section className="p-5 flex-1 md:m-10 lg:m-20">
           <h3 className="opacity text-sm uppercase md:text-base font-medium">
