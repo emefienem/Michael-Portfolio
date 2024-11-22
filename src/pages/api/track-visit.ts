@@ -14,7 +14,7 @@ export default async function handler(
     const client = new ServerClient("c0cc3f85-2cce-411e-8471-c139d3a468f7");
 
     try {
-      const sendResult = await client.sendEmail({
+      await client.sendEmail({
         From: "michael.emefienem210591138@st.lasu.edu.ng",
         To: "michael.emefienem210591138@st.lasu.edu.ng",
         Subject: "New Website Visitor",
