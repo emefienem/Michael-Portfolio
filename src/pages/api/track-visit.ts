@@ -15,17 +15,30 @@ export default async function handler(
       service: "gmail",
       auth: {
         user: "michael.emefienem@gmail.com",
-        pass: "qbzw ahhn bhgd etzc",
+        pass: "ymnq ctiq udnc kkcq",
       },
+      logger: true,
+      debug: true,
     });
 
     try {
-      transporter.sendMail({
-        from: `"Portfolio Notification" <michael.emefienem@gmail.com>`,
-        to: "emefienemmichael@gmail.com",
-        subject: "New Website Visitor",
-        text: `A user just visited your portfolio: ${url} at ${timestamp}`,
-      });
+      transporter.sendMail(
+        {
+          from: `"Portfolio Notification" <michael.emefienem@gmail.com>`,
+          to: "emefienemmichael@gmail.com",
+          subject: "New Website Visitor",
+          text: `A user just visited your portfolio: ${url} at ${timestamp}`,
+        },
+        (error, info) => {
+          if (error) {
+            console.error("Error sending email", error);
+            res.status(500).json({ message: "Failed to send notification" });
+          } else {
+            console.log("Email sent: " + info.response);
+            res.status(200).json({ message: "Notification sent!" });
+          }
+        }
+      );
 
       res.status(200).json({ message: "Notification sent!" });
     } catch (error) {
