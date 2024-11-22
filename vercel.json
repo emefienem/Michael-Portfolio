@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "pages/api/track-visit.ts": {
-      "timeout": 10
-    }
-  }
-}
