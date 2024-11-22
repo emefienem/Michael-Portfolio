@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export const Track = () => {
   useEffect(() => {
     const trackVisit = async (url: string) => {
-      const response = await fetch("/api/track-visit", {
+      await fetch("/api/track-visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
