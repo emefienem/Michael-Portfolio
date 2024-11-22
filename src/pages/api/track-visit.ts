@@ -24,9 +24,9 @@ export default async function handler(
       console.log("Email sent: ", sendResult);
 
       res.status(200).json({ message: "Notification sent!" });
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error sending email:", error);
-      return res.status(500).json({ message: "Failed to send notification" });
+      return res.status(500).json({ message: error.message });
     }
   } else {
     return res.status(405).json({ message: "Method is not allowed" });
