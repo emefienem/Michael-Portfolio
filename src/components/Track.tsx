@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export const Track = () => {
   useEffect(() => {
     const trackVisit = async (url: string) => {
-      await fetch("/api/track-visit", {
+      const response = await fetch("/api/track-visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -13,6 +13,15 @@ export const Track = () => {
           timestamp: new Date().toISOString(),
         }),
       });
+
+      if (response.ok) {
+        // Log success to the console
+        console.log("Notification sent successfully!");
+      } else {
+        // Log failure to the console
+        const errorData = await response.json();
+        console.error("Failed to send notification:", errorData.message);
+      }
     };
 
     const handleRouteChange = () => {
