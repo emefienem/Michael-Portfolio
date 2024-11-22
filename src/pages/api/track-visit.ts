@@ -24,7 +24,7 @@ export default async function handler(
       console.log("Email sent: ", sendResult);
 
       res.status(200).json({ message: "Notification sent!" });
-    } catch (error: string) {
+    } catch (error: string | any) {
       console.error("Error sending email:", error);
       return res.status(500).json({ message: error.message });
     }
