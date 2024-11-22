@@ -24,9 +24,16 @@ export default async function handler(
       console.log("Email sent: ", sendResult);
 
       res.status(200).json({ message: "Notification sent!" });
-    } catch (error: string | any) {
-      console.error("Error sending email:", error);
-      return res.status(500).json({ message: error.message });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error("Error sending email:", error.message);
+        return res.status(500).json({ message: error.message });
+      } else {
+        console.error("Unknown error:", error);
+        return res
+          .status(500)
+          .json({ message: "An unexpected error occurred" });
+      }
     }
   } else {
     return res.status(405).json({ message: "Method is not allowed" });
