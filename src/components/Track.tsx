@@ -29,7 +29,7 @@ export const Track = () => {
     return () => {
       window.removeEventListener("popstate", handleRouteChange);
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 };
