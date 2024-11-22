@@ -7,7 +7,7 @@ export const Track = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    const trackVisit = async (url: any) => {
+    const trackVisit = async (url: string | null) => {
       await fetch("/api/track-visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
