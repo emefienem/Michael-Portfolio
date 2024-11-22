@@ -19,10 +19,8 @@ export const Track = () => {
       trackVisit(window.location.href);
     };
 
-    // Track initial page load
     trackVisit(window.location.href);
 
-    // Track subsequent navigations
     window.addEventListener("popstate", handleRouteChange);
 
     return () => {

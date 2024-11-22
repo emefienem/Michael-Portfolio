@@ -21,7 +21,7 @@ export default async function handler(
         from: `"Portfolio Notification" <${process.env.MY_EMAIL}>`,
         to: "emefienemmichael@gmail.com",
         subject: "New Website Visitor",
-        text: `A User visited your portfolio: ${url} at ${timestamp}`,
+        text: `A user just visited your portfolio: ${url} at ${timestamp}`,
       });
 
       res.status(200).json({ message: "Notification sent!" });
