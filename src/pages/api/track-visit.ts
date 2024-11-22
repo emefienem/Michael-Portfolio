@@ -16,7 +16,7 @@ export default async function handler(
     try {
       const sendResult = await client.sendEmail({
         From: "michael.emefienem210591138@st.lasu.edu.ng",
-        To: "emefienemmichael@gmail.com",
+        To: "michael.emefienem210591138@st.lasu.edu.ng",
         Subject: "New Website Visitor",
         TextBody: `A user just visited your portfolio: ${url} at ${timestamp}`,
       });
