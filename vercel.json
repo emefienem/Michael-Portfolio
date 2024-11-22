@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/track-visit.ts": {
+    "src/pages/api/track-visit.ts": {
       "timeout": 10
     }
   }
