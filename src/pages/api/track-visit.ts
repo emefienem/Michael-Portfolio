@@ -1,4 +1,4 @@
-import postmark from "postmark";
+import { ServerClient } from "postmark";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
@@ -11,9 +11,7 @@ export default async function handler(
   if (req.method === "POST") {
     const { url, timestamp } = req.body;
 
-    const client = new postmark.ServerClient(
-      "bc7a8985-dcdc-4835-b0a5-775d8ecc4d08"
-    );
+    const client = new ServerClient("c0cc3f85-2cce-411e-8471-c139d3a468f7");
 
     try {
       const sendResult = await client.sendEmail({
