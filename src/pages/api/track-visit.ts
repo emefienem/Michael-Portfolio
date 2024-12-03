@@ -11,7 +11,7 @@ export default async function handler(
   if (req.method === "POST") {
     const { url, timestamp } = req.body;
 
-    const client = new ServerClient("c0cc3f85-2cce-411e-8471-c139d3a468f7");
+    const client = new ServerClient(process.env.POSTMARK_API_KEY as string);
 
     try {
       await client.sendEmail({
