@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   env: {
-    POSTMARK_API_CLIENT: process.env.POSTMARK_API_CLIENT,
+    POSTMARK_API_KEY: process.env.POSTMARK_API_KEY,
   },
 };
 
