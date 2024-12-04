@@ -5,7 +5,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // CORS Headers
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -13,12 +12,10 @@ export default async function handler(
   if (req.method === "POST") {
     const { url, timestamp } = req.body;
 
-    // Validate inputs
     if (!url || !timestamp) {
       return res.status(400).json({ message: "Missing required fields" });
     }
 
-    // Create transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -30,8 +27,8 @@ export default async function handler(
     // Email options
     const mailOptions = {
       from: process.env.EMAIL,
-      to: "emefienemmichael@gmail.com",
-      subject: "New Website Visitor",
+      to: process.env.EMAIL,
+      subject: "Portfolio Visitor",
       text: `A user just visited your portfolio: ${url} at ${timestamp}`,
     };
 
