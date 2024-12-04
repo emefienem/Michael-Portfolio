@@ -1,39 +1,49 @@
-import { ServerClient } from "postmark";
+import nodemailer from "nodemailer";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  // CORS Headers
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
   if (req.method === "POST") {
     const { url, timestamp } = req.body;
 
-    const client = new ServerClient(process.env.POSTMARK_API_KEY as string);
+    // Validate inputs
+    if (!url || !timestamp) {
+      return res.status(400).json({ message: "Missing required fields" });
+    }
+
+    // Create transporter
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASS,
+      },
+    });
+
+    // Email options
+    const mailOptions = {
+      from: process.env.EMAIL,
+      to: "emefienemmichael@gmail.com",
+      subject: "New Website Visitor",
+      text: `A user just visited your portfolio: ${url} at ${timestamp}`,
+    };
 
     try {
-      await client.sendEmail({
-        From: "michael.emefienem210591138@st.lasu.edu.ng",
-        To: "michael.emefienem210591138@st.lasu.edu.ng",
-        Subject: "New Website Visitor",
-        TextBody: `A user just visited your portfolio: ${url} at ${timestamp}`,
-      });
-
-      res.status(200).json({ message: "Notification sent!" });
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        console.error("Error sending email:", error.message);
-        return res.status(500).json({ message: error.message });
-      } else {
-        console.error("Unknown error:", error);
-        return res
-          .status(500)
-          .json({ message: "An unexpected error occurred" });
-      }
+      const info = await transporter.sendMail(mailOptions);
+      console.log("Email sent:", info.response);
+      return res.status(200).json({ message: "Email sent successfully" });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      return res.status(500).json({ message: "Error sending email" });
     }
   } else {
-    return res.status(405).json({ message: "Method is not allowed" });
+    return res.status(405).json({ message: "Method not allowed" });
   }
 }
