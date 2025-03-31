@@ -1,5 +1,10 @@
 export const projectLinks = [
   {
+    href: "https://wireframe-to-code-emefienem.vercel.app/",
+    title: "Wireframe-to-Code Converter",
+    role: "Software Engineer",
+  },
+  {
     href: "https://ai-waste-management-system.vercel.app/",
     title: "AI Waste Management System",
     role: "Software Engineer",
@@ -7,7 +12,7 @@ export const projectLinks = [
   {
     href: "https://comprehensive-system.vercel.app/",
     title: "School Management System",
-    role: "Software Engineer",
+    role: "Full-Stack Developer",
   },
   {
     href: "https://adore-jewelries.onrender.com/",
