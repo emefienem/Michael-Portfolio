@@ -1,8 +1,8 @@
 export const projectLinks = [
   {
-    href: "https://wireframe-to-code-emefienem.vercel.app/",
-    title: "Wireframe-to-Code Converter",
-    role: "Software Engineer",
+    href: "https://comprehensive-system.vercel.app/",
+    title: "School Management System",
+    role: "Full-Stack Developer",
   },
   {
     href: "https://ai-waste-management-system.vercel.app/",
@@ -10,20 +10,21 @@ export const projectLinks = [
     role: "Software Engineer",
   },
   {
-    href: "https://comprehensive-system.vercel.app/",
-    title: "School Management System",
-    role: "Full-Stack Developer",
-  },
-  {
-    href: "https://adore-jewelries.onrender.com/",
-    title: "Adore Jewelries",
-    role: "Full-Stack Developer",
+    href: "https://wireframe-to-code-emefienem.vercel.app/",
+    title: "Wireframe-to-Code Converter",
+    role: "Software Engineer",
   },
   {
     href: "https://youtube-clone-emefienem.vercel.app",
     title: "Youtube",
     role: "Software Engineer",
   },
+  {
+    href: "https://adore-jewelries.onrender.com/",
+    title: "Adore Jewelries",
+    role: "Full-Stack Developer",
+  },
+
   {
     href: "https://decentraland-emefienem.vercel.app",
     title: "Decentraland Clone",
