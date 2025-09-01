@@ -34,6 +34,24 @@ export default function Home() {
           <p className="opacity text-xs mt-5 md:text-sm">
             Passionate about leveraging technology to solve complex problems.
           </p>
+          <div className="mt-5 flex gap-4 opacity">
+            <a
+              href="/Michael Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-white text-black rounded-lg shadow hover:scale-105 transition"
+            >
+              Preview Resume
+            </a>
+
+            <a
+              href="/Michael Resume.pdf"
+              download="Michael Resume.pdf"
+              className="px-4 py-2 rounded-lg shadow hover:scale-105 transition"
+            >
+              Download Resume
+            </a>
+          </div>
         </section>
 
         <nav className="mt-5 md:m-10 p-5 flex-[2.3]">
