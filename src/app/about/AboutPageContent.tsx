@@ -32,12 +32,12 @@ const AboutContent = () => {
           websites were made of.
         </p>
         <p className="mt-3 text-xs lg:text-sm gsap-opacity">
-          Now, it&apos;s 2024, and I&apos;ve traded in my curiosity for the
-          development of applications. My journey hasn&apos;t just been about
-          coding—it&apos;s been about bridging the gap, translating designs into
-          tangible, functional applications. From developing web and mobile
-          applications, to debugging the mischievous little gremlins (yes,
-          bugs!), every project is an adventure.
+          Now, it&apos;s {new Date().getFullYear()}, and I&apos;ve traded in my
+          curiosity for the development of applications. My journey hasn&apos;t
+          just been about coding—it&apos;s been about bridging the gap,
+          translating designs into tangible, functional applications. From
+          developing web and mobile applications, to debugging the mischievous
+          little gremlins (yes, bugs!), every project is an adventure.
         </p>
         <p className="text-sm mt-5 gsap-opacity">
           - Favorite quote by Chris Coyier
