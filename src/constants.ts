@@ -1,5 +1,10 @@
 export const projectLinks = [
   {
+    href: "https://github.com/emefienem/automation-product.git",
+    title: "AI Workflow Automation Platform",
+    role: "Software Engineer",
+  },
+  {
     href: "https://ai-waste-management-system.vercel.app/",
     title: "AI Waste Management System",
     role: "Software Engineer",
