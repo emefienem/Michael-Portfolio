@@ -1,4 +1,9 @@
 export const projectLinks = [
+    {
+    href: "https://demo.ebinumpay.com",
+    title: "EBINUM — Payment Intelligence Platform",
+    role: "Founder & Software Engineer",
+  },
   {
     href: "https://github.com/emefienem/automation-product.git",
     title: "AI Workflow Automation Platform",

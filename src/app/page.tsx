@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
@@ -6,6 +7,7 @@ import Loading from "@/components/Loading";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (containerRef.current) {
       gsap.from(containerRef.current.querySelectorAll(".link, .opacity"), {
@@ -25,15 +27,22 @@ export default function Home() {
       className="home bg-primary min-h-[calc(100dvh-50px)] lg:h-screen w-screen"
     >
       <Loading />
-      <div className=" justify-center flex flex-col lg:flex-row lg:items-end mt-24">
+
+      <div className="justify-center flex flex-col lg:flex-row lg:items-end mt-24">
         <section className="p-5 flex-1 md:m-10 lg:m-20">
           <h3 className="opacity text-sm uppercase md:text-base font-medium">
             Michael Emefienem
           </h3>
-          <p className="opacity text-xs mt-5 md:text-sm">Engineer (web).</p>
+
           <p className="opacity text-xs mt-5 md:text-sm">
-            Passionate about leveraging technology to solve complex problems.
+            Software Engineer &amp; Founder.
           </p>
+
+          <p className="opacity text-xs mt-5 md:text-sm max-w-sm">
+            I build products, backend systems, and infrastructure that turn
+            ideas into real, usable software.
+          </p>
+
           <div className="mt-5 flex gap-4 opacity">
             <a
               href="/Michael Resume.pdf"
@@ -63,7 +72,6 @@ export default function Home() {
               >
                 <Link
                   href={path}
-                  passHref
                   className="link inline-block cursor-pointer"
                 >
                   {path.substring(1)}

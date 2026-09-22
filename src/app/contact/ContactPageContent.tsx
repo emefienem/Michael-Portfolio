@@ -1,4 +1,5 @@
 "use client";
+
 import { contactLinks } from "@/constants";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
@@ -17,17 +18,28 @@ const ContactPageContent = () => {
       });
     }
   }, []);
+
   return (
-    <div className="max-w-xl mt-40 p-5 md:mx-20" ref={contactRef}>
+    <div
+      className="max-w-xl mt-40 p-5 md:mx-20"
+      ref={contactRef}
+    >
       <h2 className="text-[30vw] md:text-[15vw] leading-[100%] sonder-font">
         Hello.
       </h2>
+
       <p className="gsap-opacity text-sm mt-10">
-        I&apos;m always open to discussing new projects, innovative ideas, or
-        collaborative opportunities. If you have something in mind or just want
-        to say hello, don&apos;t hesitate!
+        I&apos;m always interested in building useful products, solving
+        difficult technical problems, and working with people who care about
+        what they&apos;re building.
       </p>
-      <div className="gsap-opacity text-sm mt-5">
+
+      <p className="gsap-opacity text-sm mt-5">
+        Whether it&apos;s a software engineering opportunity, a product idea,
+        or something worth building together, feel free to reach out.
+      </p>
+
+      <div className="gsap-opacity text-sm mt-8">
         Email:{" "}
         <a
           href="mailto:emefienemmichael@gmail.com"
@@ -36,8 +48,9 @@ const ContactPageContent = () => {
           emefienemmichael@gmail.com
         </a>
       </div>
+
       <div className="gsap-opacity text-sm mt-5">
-        On the internet:
+        On the internet:{" "}
         {contactLinks.map((link, index) => (
           <span key={index}>
             {index > 0 && " / "}

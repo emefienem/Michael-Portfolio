@@ -1,4 +1,5 @@
 "use client";
+
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 
@@ -23,32 +24,33 @@ const AboutContent = () => {
         <h2 className="text-[25vw] lg:text-[15vw] leading-[100%] sonder-font text-secondary">
           About
         </h2>
+
         <p className="text-3xl md:text-5xl font-light gsap-opacity sonder-font">
-          I&apos;m Michael. Engineer, maker, and problem solver.
+          I&apos;m Michael. Engineer, builder, and problem solver.
         </p>
 
         <p className="mt-3 text-xs lg:text-sm gsap-opacity">
-          Hey there! Once upon a tech-time, I always wanted to know what
-          websites were made of.
+          I&apos;m a software engineer focused on building products and
+          backend systems that solve real problems. I enjoy taking ideas from
+          an early concept to something people can actually use.
         </p>
+
         <p className="mt-3 text-xs lg:text-sm gsap-opacity">
-          Now, it&apos;s {new Date().getFullYear()}, and I&apos;ve traded in my
-          curiosity for the development of applications. My journey hasn&apos;t
-          just been about coding—it&apos;s been about bridging the gap,
-          translating designs into tangible, functional applications. From
-          developing web and mobile applications, to debugging the mischievous
-          little gremlins (yes, bugs!), every project is an adventure.
+          I work primarily with TypeScript, Node.js, Python, React, Next.js,
+          PostgreSQL, Redis, and modern cloud infrastructure. My work spans
+          product development, APIs, distributed systems, payments, and
+          developer-focused platforms.
         </p>
-        <p className="text-sm mt-5 gsap-opacity">
-          - Favorite quote by Chris Coyier
+
+        <p className="mt-3 text-xs lg:text-sm gsap-opacity">
+          I&apos;m also the founder and engineer behind EBINUM, a payment
+          intelligence platform focused on helping businesses understand,
+          explain, and optimize payment outcomes.
         </p>
-        <blockquote className="indent-10 max-w-lg text-2xl lg:text-3xl mt-5 gsap-opacity sonder-font">
-          &quot;The best engineers build the bridge between design and
-          technology. &quot;
-        </blockquote>
+
         <p className="mt-10 text-xs lg:text-sm gsap-opacity">
-          And that&apos;s the quote I live by. Whether it was optimizing the
-          applications building user-centric designs.
+          I care about writing software that is reliable, maintainable, and
+          useful—not just software that works once.
         </p>
       </div>
 
@@ -56,9 +58,11 @@ const AboutContent = () => {
         <h3 className="lg:mt-20 text-xl md:text-2xl uppercase gsap-opacity sonder-font">
           Skills
         </h3>
+
         <p className="text-xs md:text-sm gsap-opacity">
-          Software Development / Web development / Agile methodologies /
-          Collaboration.
+          TypeScript / Node.js / Python / React / Next.js / PostgreSQL /
+          Prisma / Redis / REST APIs / Microservices / Docker / System Design
+          / Git.
         </p>
       </div>
     </section>
