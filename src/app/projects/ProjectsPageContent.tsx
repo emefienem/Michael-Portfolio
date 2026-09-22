@@ -1,4 +1,5 @@
 "use client";
+
 import { projectLinks } from "@/constants";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
@@ -11,6 +12,7 @@ const ProjectsPageContent = () => {
       const elements = containerRef.current.querySelectorAll(
         ".link, .gsap-opacity"
       );
+
       const tl = gsap.timeline({ defaults: { ease: "power3" } });
 
       tl.from(elements, {
@@ -20,10 +22,6 @@ const ProjectsPageContent = () => {
         stagger: 0.1,
         delay: 1,
       });
-
-      //   return () => {
-      //     tl.kill();
-      //   };
     }
   }, []);
 
@@ -36,14 +34,16 @@ const ProjectsPageContent = () => {
         <h3 className="gsap-opacity text-sm uppercase md:text-base">
           Projects
         </h3>
+
         <p className="gsap-opacity text-xs mt-5 md:text-sm">
-          This is a showcase of my recent projects in a variety of fields
-          including Web app development and Saas development.
+          A selection of products and systems I&apos;ve built across
+          payments, automation, AI, and web applications.
         </p>
+
         <p className="gsap-opacity text-xs mt-5 md:text-sm">
-          The world of application development is constantly evolving, and so
-          has my role over the last years. I&apos;m still learning and gaining
-          new skills every day.
+          My work has increasingly moved from building interfaces to designing
+          the systems behind products—from APIs and databases to distributed
+          services, payment infrastructure, and developer-focused platforms.
         </p>
       </section>
 
@@ -51,10 +51,7 @@ const ProjectsPageContent = () => {
         <ul className="flex flex-col gap-5 text-[10vw] md:text-[10vw] lg:text-[6vw] leading-[100%]">
           {projectLinks.map(({ href, title, role }) => (
             <div key={href}>
-              <li
-                key={href}
-                className="origin-left lg:hover:scale-[1.04] transition-[.5s_all_ease-in-out]"
-              >
+              <li className="origin-left lg:hover:scale-[1.04] transition-[.5s_all_ease-in-out]">
                 <a
                   href={href}
                   className="uppercase link inline-block sonder-font"
@@ -64,6 +61,7 @@ const ProjectsPageContent = () => {
                   {title}
                 </a>
               </li>
+
               <p className="text-xs gsap-opacity">{`- ${role}`}</p>
             </div>
           ))}
