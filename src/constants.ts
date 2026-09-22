@@ -1,6 +1,6 @@
 export const projectLinks = [
     {
-    href: "https://demo.ebinumpay.com",
+    href: "https://demo-ebinum.vercel.app",
     title: "EBINUM — Payment Intelligence Platform",
     role: "Founder & Software Engineer",
   },
